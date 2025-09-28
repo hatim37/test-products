@@ -18,10 +18,6 @@ public class TokenTechnicService {
 
 
     private final SecurityRestClient securityRestClient;
-    @Value("${CLIENT_ID}")
-    private  String clientId;
-    @Value("${CLIENT_SECRET}")
-    private  String clientSecret;
 
     public TokenTechnicService(SecurityRestClient securityRestClient) {
         this.securityRestClient = securityRestClient;

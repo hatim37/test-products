@@ -16,8 +16,6 @@ public class JwtConfig {
         this.rsakeysConfig = rsakeysConfig;
     }
 
-    @Value("${SAS_JWK_URI}")
-    private String jwtUri;
 
     private RsakeysConfig rsakeysConfig;
 
@@ -37,7 +35,7 @@ public class JwtConfig {
     @Qualifier("resourceJwtDecoder")
     public JwtDecoder resourceJwtDecoder() {
         return NimbusJwtDecoder
-                .withJwkSetUri(jwtUri)
+                .withJwkSetUri("http://localhost:8091/api/oauth2/jwks")
                 .build();
     }
 }
