@@ -1,11 +1,14 @@
 package com.ecom.testproducts;
 
+import com.ecom.testproducts.config.RsakeysConfig;
 import com.ecom.testproducts.entity.Product;
 import com.ecom.testproducts.repository.ProductRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
 
@@ -14,6 +17,8 @@ import java.nio.file.Paths;
 import java.util.Objects;
 @Slf4j
 @SpringBootApplication
+@EnableFeignClients
+@EnableConfigurationProperties(RsakeysConfig.class)
 public class TestProductsApplication {
 
     public static void main(String[] args) {
